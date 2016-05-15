@@ -7,20 +7,19 @@
 	SubShader
 	{
 		Pass
-
 		{
 			// indicate that our pass is the "base" pass in forward
-            // rendering pipeline. It gets ambient and main directional
-            // light data set up; light direction in _WorldSpaceLightPos0
-            // and color in _LightColor0
+			// rendering pipeline. It gets ambient and main directional
+			// light data set up; light direction in _WorldSpaceLightPos0
+			// and color in _LightColor0
 			Tags {"LightMode"="ForwardBase"}
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
 			#include "UnityCG.cginc" // for UnityObjectToWorldNormal
-            #include "UnityLightingCommon.cginc" // for _LightColor0
+			#include "UnityLightingCommon.cginc" // for _LightColor0
 
-            // user defined variables
+			// user defined variables
 			float4 _Color;
 
 			struct vertexInput
@@ -35,7 +34,7 @@
 				float4 col : Color;
 			};
 
-			
+
 			v2f vert (vertexInput v)
 			{
 				v2f o;
@@ -53,11 +52,12 @@
 				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
 				return o;
 			}
-			
+
 			fixed4 frag (v2f i) : SV_Target
 			{
 				return i.col;
 			}
+
 			ENDCG
 		}
 	}
