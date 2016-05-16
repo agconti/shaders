@@ -10,9 +10,9 @@
 			#include "UnityCG.cginc"
 
 			struct v2f {
-	          float4 pos : SV_POSITION;
-	          fixed4 color : COLOR;
-	      	};
+				float4 pos : SV_POSITION;
+				fixed4 color : COLOR;
+			};
 
 			// Pull from appdata_base defined in UnityCG.cginc
 			// contains: position, normal and one texture coordinate.
